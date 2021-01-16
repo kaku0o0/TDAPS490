@@ -17,11 +17,13 @@ struct ContentView : View {
             Text("Tab1").tabItem {
                 Text("Manu")
             }
+
             ARViewContainer().edgesIgnoringSafeArea(.all).tabItem {
                 Image(systemName: "viewfinder")
                 Text("Scan")
             }
-            Text("Tab3").tabItem {
+
+            SettingsView().tabItem {
                 Image(systemName: "gearshape")
                 Text("Settings")
             }
