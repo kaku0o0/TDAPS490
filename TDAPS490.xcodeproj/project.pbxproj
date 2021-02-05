@@ -14,6 +14,7 @@
 		2725DCFE25B27463002A225E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2725DCFD25B27463002A225E /* Preview Assets.xcassets */; };
 		2725DD0925B27463002A225E /* TDAPS490Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725DD0825B27463002A225E /* TDAPS490Tests.swift */; };
 		2725DD1425B27464002A225E /* TDAPS490UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725DD1325B27464002A225E /* TDAPS490UITests.swift */; };
+		9660226525CD5A0B005404E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9660226425CD5A0B005404E9 /* Default-568h@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		2725DD0F25B27464002A225E /* TDAPS490UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDAPS490UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2725DD1325B27464002A225E /* TDAPS490UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAPS490UITests.swift; sourceTree = "<group>"; };
 		2725DD1525B27464002A225E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9660226425CD5A0B005404E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +79,7 @@
 		2725DCE825B2745D002A225E = {
 			isa = PBXGroup;
 			children = (
+				9660226425CD5A0B005404E9 /* Default-568h@2x.png */,
 				2725DCF325B2745D002A225E /* TDAPS490 */,
 				2725DD0725B27463002A225E /* TDAPS490Tests */,
 				2725DD1225B27464002A225E /* TDAPS490UITests */,
@@ -238,6 +241,7 @@
 			files = (
 				2725DCFE25B27463002A225E /* Preview Assets.xcassets in Resources */,
 				2725DCFB25B27463002A225E /* Assets.xcassets in Resources */,
+				9660226525CD5A0B005404E9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -466,7 +470,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TV8ANH5YK;
 				INFOPLIST_FILE = TDAPS490Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -488,7 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7TV8ANH5YK;
 				INFOPLIST_FILE = TDAPS490Tests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 14.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
