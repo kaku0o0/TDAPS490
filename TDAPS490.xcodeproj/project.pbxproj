@@ -14,7 +14,9 @@
 		2725DCFE25B27463002A225E /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2725DCFD25B27463002A225E /* Preview Assets.xcassets */; };
 		2725DD0925B27463002A225E /* TDAPS490Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725DD0825B27463002A225E /* TDAPS490Tests.swift */; };
 		2725DD1425B27464002A225E /* TDAPS490UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725DD1325B27464002A225E /* TDAPS490UITests.swift */; };
-		9660226525CD5A0B005404E9 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 9660226425CD5A0B005404E9 /* Default-568h@2x.png */; };
+		96E1EEF425CD813C00C37CD7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96E1EEF225CD813C00C37CD7 /* LaunchScreen.storyboard */; };
+		96E1EF1225D732F600C37CD7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1EF1025D732F500C37CD7 /* SceneDelegate.swift */; };
+		96E1EF1325D732F600C37CD7 /* ScanDocumentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96E1EF1125D732F500C37CD7 /* ScanDocumentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -48,7 +50,9 @@
 		2725DD0F25B27464002A225E /* TDAPS490UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TDAPS490UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2725DD1325B27464002A225E /* TDAPS490UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAPS490UITests.swift; sourceTree = "<group>"; };
 		2725DD1525B27464002A225E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9660226425CD5A0B005404E9 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
+		96E1EEF325CD813C00C37CD7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		96E1EF1025D732F500C37CD7 /* SceneDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		96E1EF1125D732F500C37CD7 /* ScanDocumentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScanDocumentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,7 +83,6 @@
 		2725DCE825B2745D002A225E = {
 			isa = PBXGroup;
 			children = (
-				9660226425CD5A0B005404E9 /* Default-568h@2x.png */,
 				2725DCF325B2745D002A225E /* TDAPS490 */,
 				2725DD0725B27463002A225E /* TDAPS490Tests */,
 				2725DD1225B27464002A225E /* TDAPS490UITests */,
@@ -100,7 +103,10 @@
 		2725DCF325B2745D002A225E /* TDAPS490 */ = {
 			isa = PBXGroup;
 			children = (
+				96E1EF1125D732F500C37CD7 /* ScanDocumentView.swift */,
+				96E1EF1025D732F500C37CD7 /* SceneDelegate.swift */,
 				2725DCF425B2745D002A225E /* AppDelegate.swift */,
+				96E1EEF225CD813C00C37CD7 /* LaunchScreen.storyboard */,
 				2725DCF625B2745D002A225E /* ContentView.swift */,
 				2725DCF825B2745D002A225E /* Experience.rcproject */,
 				2725DCFA25B27463002A225E /* Assets.xcassets */,
@@ -240,8 +246,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				2725DCFE25B27463002A225E /* Preview Assets.xcassets in Resources */,
+				96E1EEF425CD813C00C37CD7 /* LaunchScreen.storyboard in Resources */,
 				2725DCFB25B27463002A225E /* Assets.xcassets in Resources */,
-				9660226525CD5A0B005404E9 /* Default-568h@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,8 +273,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				2725DCF725B2745D002A225E /* ContentView.swift in Sources */,
+				96E1EF1325D732F600C37CD7 /* ScanDocumentView.swift in Sources */,
 				2725DCF525B2745D002A225E /* AppDelegate.swift in Sources */,
 				2725DCF925B2745D002A225E /* Experience.rcproject in Sources */,
+				96E1EF1225D732F600C37CD7 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,6 +310,18 @@
 			targetProxy = 2725DD1025B27464002A225E /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		96E1EEF225CD813C00C37CD7 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				96E1EEF325CD813C00C37CD7 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+			usesTabs = 0;
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		2725DD1625B27464002A225E /* Debug */ = {
@@ -425,17 +445,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TDAPS490/Preview Content\"";
-				DEVELOPMENT_TEAM = 7TV8ANH5YK;
+				DEVELOPMENT_TEAM = X9URA73JN2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TDAPS490/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aps490.TDAPS490;
+				PRODUCT_BUNDLE_IDENTIFIER = aps490.ARp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -446,17 +468,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"TDAPS490/Preview Content\"";
-				DEVELOPMENT_TEAM = 7TV8ANH5YK;
+				DEVELOPMENT_TEAM = X9URA73JN2;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = TDAPS490/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = aps490.TDAPS490;
+				PRODUCT_BUNDLE_IDENTIFIER = aps490.ARp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
