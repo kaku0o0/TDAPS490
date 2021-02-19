@@ -15,6 +15,7 @@
 		2725DD0925B27463002A225E /* TDAPS490Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725DD0825B27463002A225E /* TDAPS490Tests.swift */; };
 		2725DD1425B27464002A225E /* TDAPS490UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2725DD1325B27464002A225E /* TDAPS490UITests.swift */; };
 		6C1F399225B383A100B5DF26 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C1F399125B383A100B5DF26 /* SettingsView.swift */; };
+		6CEC860825DF6AD60047D137 /* ARView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6CEC860725DF6AD60047D137 /* ARView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		2725DD1325B27464002A225E /* TDAPS490UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TDAPS490UITests.swift; sourceTree = "<group>"; };
 		2725DD1525B27464002A225E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6C1F399125B383A100B5DF26 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		6CEC860725DF6AD60047D137 /* ARView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				2725DCFF25B27463002A225E /* Info.plist */,
 				2725DCFC25B27463002A225E /* Preview Content */,
 				6C1F399125B383A100B5DF26 /* SettingsView.swift */,
+				6CEC860725DF6AD60047D137 /* ARView.swift */,
 			);
 			path = TDAPS490;
 			sourceTree = "<group>";
@@ -265,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6CEC860825DF6AD60047D137 /* ARView.swift in Sources */,
 				2725DCF725B2745D002A225E /* ContentView.swift in Sources */,
 				6C1F399225B383A100B5DF26 /* SettingsView.swift in Sources */,
 				2725DCF525B2745D002A225E /* AppDelegate.swift in Sources */,
