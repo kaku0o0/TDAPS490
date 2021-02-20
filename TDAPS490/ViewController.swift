@@ -12,6 +12,7 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    var canadaNode: SCNNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,18 +24,25 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        let canada = SCNScene(named: "art.scnassets/canada_flag.scn")
+        canadaNode = canada?.rootNode
         
-        // Set the scene to the view
-        sceneView.scene = scene
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         // Create a session configuration
-        let configuration = ARWorldTrackingConfiguration()
+        let configuration = ARImageTrackingConfiguration()
 
+        
+        if let referenceImages = ARReferenceImage.referenceImages(inGroupNamed: "AR Resources", bundle: Bundle.main){
+            configuration.trackingImages = referenceImages
+            configuration.maximumNumberOfTrackedImages = 2
+            
+         }
+        
         // Run the view's session
         sceneView.session.run(configuration)
     }
@@ -44,6 +52,28 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    func renderer(_ renderer: SCNSceneRenderer, nodeFor anchor: ARAnchor) -> SCNNode? {
+        
+        let node = SCNNode()
+        
+        if let imageAnchor = anchor as? ARImageAnchor {
+            let size = imageAnchor.referenceImage.physicalSize
+            let plane = SCNPlane(width: size.width, height: size.height)
+            plane.firstMaterial?.diffuse.contents = UIColor.white.withAlphaComponent(0.5)
+            plane.cornerRadius = 0.005
+            let planeNode = SCNNode(geometry: plane)
+            planeNode.eulerAngles.x = -.pi / 2
+            node.addChildNode(planeNode)
+            
+            
+            if let shapeNMode = canadaNode{
+                node.addChildNode(shapeNMode)
+            }
+            
+        }
+        return node
     }
 
     // MARK: - ARSCNViewDelegate
