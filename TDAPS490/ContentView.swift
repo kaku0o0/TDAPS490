@@ -1,39 +1,34 @@
 //
 //  ContentView.swift
-//  TDaps490
+//  ARImageTracking
 //
-//  Created by Sam Wang on 2021-01-15.
+//  Created by Qi on 8/1/21.
 //
 
+import ARKit
 import SwiftUI
+import RealityKit
 
 struct ContentView : View {
     var body: some View {
-        // return ARViewContainer().edgesIgnoringSafeArea(.all)
+        return ARViewContainer().edgesIgnoringSafeArea(.all)
         
         // Create three bottom tabs
-        TabView{
-            Text("Tab1").tabItem {
-                Text("Manu")
-            }
+        //TabView{
+           // Text("Tab1").tabItem {
+          //      Text("Manu")
+         //   }
 
-            ARViewContainer().edgesIgnoringSafeArea(.all).tabItem {
-                Image(systemName: "viewfinder")
-                Text("Scan")
-            }
+          //  ARViewContainer().edgesIgnoringSafeArea(.all).tabItem {
+          //      Image(systemName: "viewfinder")
+         //       Text("Scan")
+         //   }
 
-            SettingsView().tabItem {
-                Image(systemName: "gear")
-                Text("Settings")
-            }
-        }
+          //  SettingsView().tabItem {
+           //     Image(systemName: "gear")
+          //      Text("Settings")
+           // }
+        //}
     }
 }
 
-#if DEBUG
-struct ContentView_Previews : PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-#endif
