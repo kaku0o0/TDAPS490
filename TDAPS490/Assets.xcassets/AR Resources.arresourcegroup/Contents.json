@@ -5,7 +5,10 @@
   },
   "resources" : [
     {
-      "filename" : "IMG_5705.arreferenceimage"
+      "filename" : "1USD.arreferenceimage"
+    },
+    {
+      "filename" : "5CAD.arreferenceimage"
     }
   ]
 }

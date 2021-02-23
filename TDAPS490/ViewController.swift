@@ -13,6 +13,7 @@ class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var canadaNode: SCNNode?
+    var usaNode: SCNNode?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +27,9 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Create a new scene
         let canada = SCNScene(named: "art.scnassets/canada_flag.scn")
         canadaNode = canada?.rootNode
-        
+        // Create a new scene
+        let usa = SCNScene(named: "art.scnassets/usa_flag.scn")
+        usaNode = usa?.rootNode
 
     }
     
@@ -67,10 +70,15 @@ class ViewController: UIViewController, ARSCNViewDelegate {
             planeNode.eulerAngles.x = -.pi / 2
             node.addChildNode(planeNode)
             
-            
-            if let shapeNMode = canadaNode{
-                node.addChildNode(shapeNMode)
+            var shapeNode: SCNNode?
+            if imageAnchor.referenceImage.name == "1USD"{
+                shapeNode=usaNode
+            }else{
+                shapeNode=canadaNode
             }
+        
+            guard let shape = shapeNode else { return nil}
+            node.addChildNode(shape)
             
         }
         return node
