@@ -9,13 +9,14 @@ import UIKit
 import SceneKit
 import ARKit
 
-class ViewController: UIViewController, ARSCNViewDelegate {
+class ARViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
     var canadaNode: SCNNode?
     var usaNode: SCNNode?
     let updateQueue = DispatchQueue(label: Bundle.main.bundleIdentifier! +
         ".serialSceneKitQueue")
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -167,4 +168,5 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
     }
+    
 }
