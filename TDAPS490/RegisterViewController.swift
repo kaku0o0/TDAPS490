@@ -30,7 +30,10 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let defaults = UserDefaults.standard
-        
+        //Looks for taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+
+        view.addGestureRecognizer(tap)
         defaults.set(false, forKey: "KeepMeLoggedIn")
 
         if nameField != nil {
@@ -43,7 +46,11 @@ class RegisterViewController: UIViewController {
         }
 
     }
-    
+    //Calls this function when the tap 
+    @objc func dismissKeyboard() {
+
+        view.endEditing(true)
+    }
     override func viewDidAppear(_ animated: Bool) {
     //        self.performSegue(withIdentifier: "pushSignUp", sender: self)
     }

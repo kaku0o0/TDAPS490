@@ -15,8 +15,17 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
+        
+        //Looks for multiple taps.
+         let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
 
+        view.addGestureRecognizer(tap)
+    }
+    //Calls this function when the tap
+    @objc func dismissKeyboard() {
+
+        view.endEditing(true)
+    }
     @IBAction func onLogin(_ sender: Any) {
         let defaults = UserDefaults.standard
         if email.text?.isEmpty ?? true || password.text?.isEmpty ?? true || defaults.string(forKey: "email") != email.text || defaults.string(forKey: "password") != password.text {
