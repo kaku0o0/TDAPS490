@@ -68,7 +68,8 @@ class CurrencyConverter: NSObject {
     
     let ratesToCAD = [
         "USD" : (rate: 1.27, country: "United States", friendlyCurrency:"USA Dollars"),
-        "CAD" : (rate: 1, country: "Canada", friendlyCurrency:"Canadian Dollars")
+        "CAD" : (rate: 1, country: "Canada", friendlyCurrency:"Canadian Dollars"),
+        "CNY" : (rate: 0.19, country: "China", friendlyCurrency:"Chinese Yuan")
     ]
     
 }

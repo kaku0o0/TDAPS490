@@ -5,10 +5,34 @@
   },
   "resources" : [
     {
+      "filename" : "1-CNY-A.arreferenceimage"
+    },
+    {
+      "filename" : "1-CNY-B.arreferenceimage"
+    },
+    {
       "filename" : "1-USD-A.arreferenceimage"
     },
     {
+      "filename" : "1-USD-B.arreferenceimage"
+    },
+    {
       "filename" : "5-CAD-A.arreferenceimage"
+    },
+    {
+      "filename" : "5-CAD-B.arreferenceimage"
+    },
+    {
+      "filename" : "10-CNY-A.arreferenceimage"
+    },
+    {
+      "filename" : "20-CAD-A.arreferenceimage"
+    },
+    {
+      "filename" : "20-CAD-B.arreferenceimage"
+    },
+    {
+      "filename" : "100-USD-B.arreferenceimage"
     }
   ]
 }

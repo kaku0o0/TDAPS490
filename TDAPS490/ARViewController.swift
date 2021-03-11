@@ -14,6 +14,7 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
     @IBOutlet var sceneView: ARSCNView!
     var canadaNode: SCNNode?
     var usaNode: SCNNode?
+    var chinaNode: SCNNode?
     let updateQueue = DispatchQueue(label: Bundle.main.bundleIdentifier! +
         ".serialSceneKitQueue")
     
@@ -32,6 +33,8 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
         // Create a new scene
         let usa = SCNScene(named: "art.scnassets/usa_flag.scn")
         usaNode = usa?.rootNode
+        let china = SCNScene(named: "art.scnassets/china_flag.scn")
+        chinaNode = china?.rootNode
 
     }
     
@@ -77,11 +80,17 @@ class ARViewController: UIViewController, ARSCNViewDelegate {
             var shapeNode: SCNNode?
             let imageName=imageAnchor.referenceImage.name ?? "[Can't read currency name]"
             let s = imageName.split(separator: "-") // e.g. 5-CAD-A
-            if "\(s[1])" == "USD"{
+            switch "\(s[1])"{
+            case "USD":
                 shapeNode=self.usaNode
-            }else{
+            case "CAD":
+                shapeNode=self.canadaNode
+            case "CNY":
+                shapeNode=self.chinaNode
+            default:
                 shapeNode=self.canadaNode
             }
+
         
             guard let shape = shapeNode else { return}
             node.addChildNode(shape)
