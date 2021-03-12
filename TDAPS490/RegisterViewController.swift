@@ -96,16 +96,18 @@ class RegisterViewController: UIViewController {
 
     @IBAction func onConnectToBank(_ sender: UIButton) {
         var error = ""
-        if cardNumber.text?.isEmpty ?? true {
-            error = "Please enter your card number or account number"
+        if cardNumber.text?.isEmpty ?? true || String(cardNumber.text!).count < 16 {
+            error = "Please double check your card number or account number"
         } else if cardPassword.text?.isEmpty ?? true {
-            error = "Please enter your account password"
+            error = "Please double check your account password"
         }
         
         if error != "" {
             cardErrorMessage.text = error
         } else {
-            // Do we need to save card info?
+            let defaults = UserDefaults.standard
+            defaults.set(cardNumber.text!, forKey: "cardNum")
+            defaults.synchronize()
             performSegue(withIdentifier: "connectToBankSuccess", sender: nil)
         }
     }
