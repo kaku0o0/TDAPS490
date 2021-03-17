@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Scan-->
+        <!--Currency-->
         <scene sceneID="tXr-a1-R10">
             <objects>
                 <viewController id="BV1-FR-VrT" customClass="ARViewController" customModule="TDAPS490" customModuleProvider="target" sceneMemberID="viewController">
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="813"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="764"/>
                             </arscnView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
@@ -31,7 +31,7 @@
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Scan" image="viewfinder" catalog="system" id="9Oy-TQ-pGp">
+                    <tabBarItem key="tabBarItem" title="Currency" image="square.dashed" catalog="system" id="9Oy-TQ-pGp">
                         <color key="badgeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                     <navigationItem key="navigationItem" id="mz5-Qw-YvU"/>
@@ -41,7 +41,42 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2358" y="1211"/>
+            <point key="canvasLocation" x="6271" y="1261"/>
+        </scene>
+        <!--Credit card-->
+        <scene sceneID="nQj-5a-Dx8">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PAY-AV-2jA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="RzY-Wc-auR" customClass="CardViewController" customModule="TDAPS490" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4ad-iT-7QP">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="7Yl-wM-YD0"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Credit card" image="creditcard" catalog="system" id="g9e-pR-Hxq"/>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="5390" y="1261"/>
+        </scene>
+        <!--Scan-->
+        <scene sceneID="WYr-op-gAl">
+            <objects>
+                <tabBarController id="p6F-9I-2vh" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Scan" image="viewfinder" catalog="system" id="teX-0I-ucs"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="F8E-9p-FAS">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="C6G-GZ-vkE"/>
+                        <segue destination="RzY-Wc-auR" kind="relationship" relationship="viewControllers" id="JIg-MD-cGH"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Tww-Ij-Bza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5391" y="548"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="cQ9-BM-7Dv">
@@ -801,9 +836,10 @@
                         <color key="selectedImageTintColor" red="0.89796036479999997" green="0.89808970690000001" blue="0.89793211220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
+                        <outlet property="tabbar" destination="dJw-Dw-zTQ" id="4ei-cT-eT4"/>
                         <segue destination="J8z-FA-kIe" kind="relationship" relationship="viewControllers" id="SKl-Y8-3mV"/>
-                        <segue destination="BV1-FR-VrT" kind="relationship" relationship="viewControllers" id="S1v-jK-byo"/>
-                        <segue destination="imo-G5-7m8" kind="relationship" relationship="viewControllers" id="imK-dy-qwl"/>
+                        <segue destination="p6F-9I-2vh" kind="relationship" relationship="viewControllers" id="T8U-DA-aWU"/>
+                        <segue destination="imo-G5-7m8" kind="relationship" relationship="viewControllers" id="cPq-NI-Pfx"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rrB-h4-bld" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1306,14 +1342,16 @@
         <segue reference="ojG-7K-Ww9"/>
         <segue reference="gx3-i8-OCa"/>
         <segue reference="dO6-qM-ocB"/>
-        <segue reference="LyA-09-nOV"/>
+        <segue reference="DS8-Y6-lpe"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chevron.right" catalog="system" width="96" height="128"/>
         <image name="circle.fill" catalog="system" width="128" height="121"/>
+        <image name="creditcard" catalog="system" width="128" height="88"/>
         <image name="gearshape" catalog="system" width="128" height="121"/>
         <image name="homepage_1.png" width="699" height="699"/>
         <image name="house" catalog="system" width="128" height="106"/>
+        <image name="square.dashed" catalog="system" width="128" height="114"/>
         <image name="viewfinder" catalog="system" width="128" height="115"/>
         <systemColor name="opaqueSeparatorColor">
             <color red="0.77647058823529413" green="0.77647058823529413" blue="0.78431372549019607" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
