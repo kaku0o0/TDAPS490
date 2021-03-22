@@ -14,14 +14,35 @@ import Vision
 
 class CardViewController: UIViewController {
     @IBOutlet weak var resultsLabel: UILabel!
+    @IBOutlet weak var numberLabel: UILabel!
+    @IBOutlet weak var testLabel: UILabel!
 
+    func setValues(title: String,buttonTitle: String){
+        testLabel.text = title
+    }
+
+
+    @IBAction func didTapButton(_ sender: Any) {
+        let scannerView = CardScanner.getScanner { card, date, cvv in
+            self.resultsLabel.text = "\(card))"
+            
+        }
+        
+        present(scannerView, animated: false, completion: nil)
+
+        testLabel.text="$1500"
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
         // Add NSCameraUsageDescription to your Info.plist
-        let scannerView = CardScanner.getScanner { card, date, cvv in
-            self.resultsLabel.text = "\(card))"
+
+        
+    }
+    override  func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        if isBeingDismissed{
+            testLabel.text="$1500"
         }
-        present(scannerView, animated: true, completion: nil)
     }
 
     override func didReceiveMemoryWarning() {
