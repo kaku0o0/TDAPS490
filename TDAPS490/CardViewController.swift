@@ -17,20 +17,18 @@ class CardViewController: UIViewController {
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var testLabel: UILabel!
 
-    func setValues(title: String,buttonTitle: String){
-        testLabel.text = title
-    }
+
 
 
     @IBAction func didTapButton(_ sender: Any) {
         let scannerView = CardScanner.getScanner { card, date, cvv in
-            self.resultsLabel.text = "\(card))"
-            
+            self.resultsLabel.text = (card)
+            self.testLabel.text="$1500"
         }
         
         present(scannerView, animated: false, completion: nil)
-
-        testLabel.text="$1500"
+        
+        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -83,9 +81,11 @@ public class CardScanner: UIViewController {
     public var labelCardCVV: UILabel?
     public var labelHintBottom: UILabel?
     public var labelHintTop: UILabel?
+    public var labelCompBottom: UILabel?
 
     public var hintTopText = "Center your card until the fields are recognized"
     public var hintBottomText = "Touch a recognized value to delete the value and try again"
+    public var bottomComplete = "Touch this to complete"
     public var viewTitle = "Card scanner"
 
     // MARK: - Instance dependencies
@@ -121,6 +121,9 @@ public class CardScanner: UIViewController {
         setupCaptureSession()
         captureSession.startRunning()
         title = viewTitle
+        view.addSubview(button)
+        button.addTarget(self, action: #selector(scanCompleted),for: .touchUpInside)
+        
     }
 
     override public func viewDidLayoutSubviews() {
@@ -130,6 +133,22 @@ public class CardScanner: UIViewController {
 
     // MARK: - Add Views
 
+    private let button: UIButton = {
+        let widht = UIScreen.main.bounds.width - (UIScreen.main.bounds.width * 0.2)
+        let height = widht - (widht * 0.45)
+        let viewX = (UIScreen.main.bounds.width / 2) - (widht / 2)
+        let viewY = (UIScreen.main.bounds.height / 2) - (height / 2) - 100
+        let labelCardCVVX = viewX + 55
+        let bottomY = (UIScreen.main.bounds.height / 2) + (height / 2) - 100
+        let labelCardCVVY = bottomY+70
+        let button = UIButton(frame: CGRect(x: labelCardCVVX, y: labelCardCVVY, width: 200,height: 50))
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = .systemRed
+        button.setTitle("Complete", for: .normal)
+        return button
+        
+        }()
+    
     private func setupCaptureSession() {
         addCameraInput()
         addPreviewLayer()
@@ -238,8 +257,6 @@ public class CardScanner: UIViewController {
         labelHintBottom?.textAlignment = .center
         labelHintBottom?.textColor = .white
   
-
-        view.backgroundColor = .black
     }
 
     // MARK: - Clear on touch
@@ -260,7 +277,13 @@ public class CardScanner: UIViewController {
     }
 
     // MARK: - Completed process
+    @objc func scanCompleted() {
+        resultsHandler(creditCardNumber, creditCardDate, creditCardCVV)
+        stop()
+        dismiss(animated: true, completion: nil)
 
+        
+    }
     private func stop() {
         captureSession.stopRunning()
     }
